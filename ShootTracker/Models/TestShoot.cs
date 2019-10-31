@@ -7,11 +7,11 @@ namespace ShootTracker.Models
         public string Good { get; set; }
         public string ShotName { get; set; }
         public int Take { get; set; }
-        public DateTime In_TC { get; set; }
-        public DateTime Out_TC { get; set; }
-        public DateTime Duration { get; set; }
-        public string AudioChannel_1 { get; set; }
-        public string AudioChannel_2 { get; set; }
-        public string Commits { get; set; }
+        public string InTimeCode { get; set; }
+        public string OutTimeCode { get; set; }
+        public string Duration { get; set; }
+        public string AudioChannel01 { get; set; }
+        public string AudioChannel02 { get; set; }
+        public string Comments { get; set; }
     }
 }

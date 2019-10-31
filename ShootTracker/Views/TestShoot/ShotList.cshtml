@@ -1,0 +1,34 @@
+﻿@model List<TestShoot>
+
+<h3>Shot List</h3>
+
+<table class"table">
+    <tr>
+        <th>ID</th>
+        <th>Good</th>
+        <th>ShotName</th>
+        <th>Take</th>
+        <th>InTimeCode</th>
+        <th>OutTimeCode</th>
+        <th>Duration</th>
+        <th>AudioChannel01</th>
+        <th>AudioChannel02</th>
+        <th>Comments</th>
+    </tr>
+@foreach(var shot in Model)
+{
+    <tr>
+        <td>@shot.ID</td>
+        <td>@shot.Good</td>
+        <td>@shot.ShotName</td>
+        <td>@shot.Take</td>
+        <td>@shot.InTimeCode</td>
+        <td>@shot.OutTimeCode</td>
+        <td>@shot.Duration</td>
+        <td>@shot.AudioChannel01</td>
+        <td>@shot.AudioChannel02</td>
+        <td>@shot.Comments</td>
+    </tr>
+}
+    
+</table>
