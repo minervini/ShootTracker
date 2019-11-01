@@ -10,8 +10,9 @@ namespace ShootTracker.Models
         public string InTimeCode { get; set; }
         public string OutTimeCode { get; set; }
         public string Duration { get; set; }
-        public string AudioChannel01 { get; set; }
-        public string AudioChannel02 { get; set; }
+        public string Audio01 { get; set; }
+        public string Audio02 { get; set; }
         public string Comments { get; set; }
+        public int ProjectID { get; set; }
     }
 }

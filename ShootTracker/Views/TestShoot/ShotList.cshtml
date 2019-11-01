@@ -11,9 +11,10 @@
         <th align="right">InTimeCode</th>
         <th align="right">OutTimeCode</th>
         <th align="right">Duration</th>
-        <th>AudioChannel01</th>
-        <th>AudioChannel02</th>
+        <th>Audio01</th>
+        <th>Audio02</th>
         <th>Comments</th>
+        <th>ProjectID</th>
     </tr>
 @foreach(var shot in Model)
 {
@@ -25,9 +26,10 @@
         <td align="right">@shot.InTimeCode</td>
         <td align="right">@shot.OutTimeCode</td>
         <td align="right">@shot.Duration</td>
-        <td>@shot.AudioChannel01</td>
-        <td>@shot.AudioChannel02</td>
+        <td>@shot.Audio01</td>
+        <td>@shot.Audio02</td>
         <td align="left">@shot.Comments</td>
+        <td>@shot.ProjectID</td>
     </tr>
 }
     

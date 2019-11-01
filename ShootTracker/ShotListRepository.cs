@@ -14,7 +14,7 @@ namespace ShootTracker
             MySqlConnection conn = new MySqlConnection(ConnectionString);
             MySqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT ID, Good, ShotName, Take, InTimeCode, OutTimeCode, Duration, AudioChannel01, AudioChannel02, Comments FROM Test_Shoot;";
+            cmd.CommandText = "SELECT ID, Good, ShotName, Take, InTimeCode, OutTimeCode, Duration, Audio01, Audio02, Comments, ProjectID FROM Test_Shoot;";
 
             using (conn)
             {
@@ -32,9 +32,10 @@ namespace ShootTracker
                     currentShot.InTimeCode = reader.GetString("InTimeCode");
                     currentShot.OutTimeCode = reader.GetString("OutTimeCode");
                     currentShot.Duration = reader.GetString("Duration");
-                    currentShot.AudioChannel01 = reader.GetString("AudioChannel01");
-                    currentShot.AudioChannel02 = reader.GetString("AudioChannel02");
+                    currentShot.Audio01 = reader.GetString("Audio01");
+                    currentShot.Audio02 = reader.GetString("Audio02");
                     currentShot.Comments = reader.GetString("Comments");
+                    currentShot.ProjectID = reader.GetInt32("ProjectID");
 
                     allShots.Add(currentShot);
                 }
