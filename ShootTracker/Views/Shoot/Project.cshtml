@@ -1,0 +1,21 @@
+﻿@model List<Project>
+
+<h3>Projects</h3>
+
+<table class="table">
+    <tr align="center">
+        <th>ProjecID</th>
+        <th>ProjectName</th>
+        <th>ShootDate</th>
+    </tr>
+
+@foreach (var project in Model)
+{
+    <tr align="center">
+        <td>@project.ProjectID</td>
+        <td>@project.ProjectName</td>
+        <td>@project.ShootDate</td>
+    </tr>
+}
+
+</table>

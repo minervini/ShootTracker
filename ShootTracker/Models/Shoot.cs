@@ -1,7 +1,6 @@
-﻿using System;
-namespace ShootTracker.Models
+﻿namespace ShootTracker.Models
 {
-    public class TestShoot
+    public class Shoot
     {
         public int ID { get; set; }
         public string Good { get; set; }

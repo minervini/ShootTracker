@@ -9,14 +9,21 @@ using ShootTracker.Models;
 
 namespace ShootTracker.Controllers
 {
-    public class TestShootController : Controller
+    public class ShootController : Controller
     {
         // GET: /<controller>/
         public IActionResult ShotList()
         {
             ShotListRepository repo = new ShotListRepository();
-            List<TestShoot> shots = repo.GetAllShots();
+            List<Shoot> shots = repo.GetAllShots();
             return View(shots);
+        }
+
+        public IActionResult Project()
+        {
+            ProjectRepository repo = new ProjectRepository();
+            List<Project> projects = repo.GetProjects();
+            return View(projects);
         }
     }
 }

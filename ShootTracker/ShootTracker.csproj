@@ -12,6 +12,12 @@
     <PackageReference Include="MySql.Data" Version="8.0.18" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\TestShoot\" />
+    <Folder Include="Views\Shoot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\TestShoot\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\ProjectViewModel.cs" />
   </ItemGroup>
 </Project>

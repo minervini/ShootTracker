@@ -1,5 +1,4 @@
-﻿using System;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using ShootTracker.Models;
 
@@ -9,7 +8,7 @@ namespace ShootTracker
     {
         private static string ConnectionString = System.IO.File.ReadAllText("ConnectionString.txt");
 
-        public List<TestShoot> GetAllShots()
+        public List<Shoot> GetAllShots()
         {
             MySqlConnection conn = new MySqlConnection(ConnectionString);
             MySqlCommand cmd = conn.CreateCommand();
@@ -21,23 +20,23 @@ namespace ShootTracker
                 conn.Open();
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                List<TestShoot> allShots = new List<TestShoot>();
+                List<Shoot> allShots = new List<Shoot>();
                 while (reader.Read())
                 {
-                    TestShoot currentShot = new TestShoot();
-                    currentShot.ID = reader.GetInt32("ID");
-                    currentShot.Good = reader.GetString("Good");
-                    currentShot.ShotName = reader.GetString("ShotName");
-                    currentShot.Take = reader.GetInt32("Take");
-                    currentShot.InTimeCode = reader.GetString("InTimeCode");
-                    currentShot.OutTimeCode = reader.GetString("OutTimeCode");
-                    currentShot.Duration = reader.GetString("Duration");
-                    currentShot.Audio01 = reader.GetString("Audio01");
-                    currentShot.Audio02 = reader.GetString("Audio02");
-                    currentShot.Comments = reader.GetString("Comments");
-                    currentShot.ProjectID = reader.GetInt32("ProjectID");
-
-                    allShots.Add(currentShot);
+                    Shoot currentShoot = new Shoot();
+                    currentShoot.ID = reader.GetInt32("ID");
+                    currentShoot.Good = reader.GetString("Good");
+                    currentShoot.ShotName = reader.GetString("ShotName");
+                    currentShoot.Take = reader.GetInt32("Take");
+                    currentShoot.InTimeCode = reader.GetString("InTimeCode");
+                    currentShoot.OutTimeCode = reader.GetString("OutTimeCode");
+                    currentShoot.Duration = reader.GetString("Duration");
+                    currentShoot.Audio01 = reader.GetString("Audio01");
+                    currentShoot.Audio02 = reader.GetString("Audio02");
+                    currentShoot.Comments = reader.GetString("Comments");
+                    currentShoot.ProjectID = reader.GetInt32("ProjectID");
+                             
+                    allShots.Add(currentShoot);
                 }
                 return allShots;
             }
