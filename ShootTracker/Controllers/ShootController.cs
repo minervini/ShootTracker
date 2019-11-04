@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ShootTracker.Models;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace ShootTracker.Controllers
 {
     public class ShootController : Controller
     {
-        // GET: /<controller>/
         public IActionResult ShotList()
         {
             ShotListRepository repo = new ShotListRepository();
@@ -24,6 +21,27 @@ namespace ShootTracker.Controllers
             ProjectRepository repo = new ProjectRepository();
             List<Project> projects = repo.GetProjects();
             return View(projects);
+        }
+
+        public IActionResult InsertProjectToDatabase(Project projectToInsert)
+        {
+            var repo = new ProjectRepository();
+            repo.CreateProject(projectToInsert);
+
+            return RedirectToAction("Project");
+        }
+
+        public IActionResult CreateProject()
+        {
+            return View();
+        }
+
+        public IActionResult DeleteProject(int projectToDelete)
+        {
+            var repo = new ProjectRepository();
+            repo.DeleteProject(projectToDelete);
+
+            return RedirectToAction("Project");
         }
     }
 }

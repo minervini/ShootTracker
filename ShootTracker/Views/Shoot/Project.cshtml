@@ -2,19 +2,30 @@
 
 <h3>Projects</h3>
 
+<div style="display: block">
+        <a href="/Shoot/CreateProject">Create a New Project</a>
+
+    </div>
+
 <table class="table">
-    <tr align="center">
-        <th>ProjecID</th>
-        <th>ProjectName</th>
-        <th>ShootDate</th>
+    <tr>
+        <th align="left">Project ID</th>
+        <th align="left">Project Name</th>
+        <th align="left">Shoot Date</th>
     </tr>
 
 @foreach (var project in Model)
 {
-    <tr align="center">
-        <td>@project.ProjectID</td>
-        <td>@project.ProjectName</td>
-        <td>@project.ShootDate</td>
+    <tr>
+        <td align="left">@project.ProjectID</td>
+        <td align="left"><a href=Project/ViewProject/@project.ProjectID>@project.ProjectName</td>
+        <td align="left">@project.ShootDate</td>
+        <td>
+            <form asp-action="DeleteProject" asp-controller="Shoot">
+                <input asp-for="ProjectID" type="hidden" value="@project.ProjectID" />
+                <input type="submit" onclick="confirm('Are you sure?')" value="Delete" class="btn btn-primary"/> 
+            </form>
+        </td>
     </tr>
 }
 

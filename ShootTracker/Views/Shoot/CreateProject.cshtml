@@ -1,0 +1,19 @@
+﻿@model Project
+
+<h2>Create New Project </h2>
+
+@using (Html.BeginForm("InsertProjectToDatabase", "Shoot", "Post"))
+
+{
+        <input asp-for="ProjectID" type="hidden" value="" />
+
+        <label asp-for="ProjectName" class="control-label">ProjectName</label>
+
+        <input type="text" name="ProjectName" class="form-control" value="" />
+
+        <label asp-for="ShootDate" class="control-label">ShootDate</label>
+
+        <input type="text" step="0.01" name="ShootDate" class="form-control" />
+ 
+    <input type="submit" value="Create Project" class="btn btn-primary" />
+}

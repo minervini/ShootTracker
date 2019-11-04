@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\TestShoot\Index.cshtml" />
+    <Content Remove="ShotList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\ProjectViewModel.cs" />
