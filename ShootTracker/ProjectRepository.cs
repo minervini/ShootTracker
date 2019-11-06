@@ -61,8 +61,8 @@ namespace ShootTracker
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
 
-                cmd.CommandText = "Delete FROM product WHERE ProductID = @productID;";
-                cmd.Parameters.AddWithValue("productID", projectID);
+                cmd.CommandText = "Delete FROM project WHERE ProjectID = @projectID;";
+                cmd.Parameters.AddWithValue("projectID", projectID);
 
                 cmd.ExecuteNonQuery();
             }

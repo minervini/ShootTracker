@@ -21,10 +21,11 @@
         <td align="left"><a href=Project/ViewProject/@project.ProjectID>@project.ProjectName</td>
         <td align="left">@project.ShootDate</td>
         <td>
-            <form asp-action="DeleteProject" asp-controller="Shoot">
-                <input asp-for="ProjectID" type="hidden" value="@project.ProjectID" />
+           <form asp-action="DeleteProject" asp-controller="Shoot" method="post">
+                <input name="projectToDelete" type="hidden" value="@project.ProjectID" />
+               
                 <input type="submit" onclick="confirm('Are you sure?')" value="Delete" class="btn btn-primary"/> 
-            </form>
+           </form>
         </td>
     </tr>
 }

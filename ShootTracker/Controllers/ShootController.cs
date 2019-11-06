@@ -35,11 +35,11 @@ namespace ShootTracker.Controllers
         {
             return View();
         }
-
-        public IActionResult DeleteProject(int projectToDelete)
+        [HttpPost]
+        public IActionResult DeleteProject([FromForm] int projectToDelete)
         {
             var repo = new ProjectRepository();
-            repo.DeleteProject(projectToDelete);
+            repo.DeleteProject(projectToDelete);    
 
             return RedirectToAction("Project");
         }
